@@ -1,0 +1,10 @@
+<h1>Create Category</h1>
+<form class="form" [formGroup]="form">
+    <mat-form-field>
+        <mat-label>Name</mat-label><br />
+        <input matInput type="text" formControlName="name" />
+    </mat-form-field><br>
+    <button mat-raised-button color="primary" class="submitButton" (click)="sendForm()">
+        Create
+    </button>
+</form>
