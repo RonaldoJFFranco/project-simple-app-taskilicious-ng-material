@@ -1,3 +1,8 @@
 mat-select {
     width: 200px;
 }
+
+mat-list-item {
+    width: fit-content !important;
+    cursor: pointer;
+}

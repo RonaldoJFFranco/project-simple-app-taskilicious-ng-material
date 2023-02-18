@@ -1,0 +1,28 @@
+<h1>Create Task</h1>
+<form class="form" [formGroup]="form">
+    <mat-form-field>
+        <mat-label>Name</mat-label><br />
+        <input matInput type="text" formControlName="name" />
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+        <mat-label>Choose a category</mat-label>
+        <mat-select formControlName="categoryId">
+            <mat-option *ngFor="let category of categories" [value]="category.id">
+                {{category.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field><br>
+
+    <section>
+        <mat-checkbox *ngFor="let member of teamMembers" [value]="member.id"
+            (change)="checkMember(member)">
+                <img src="{{member.avatar}}" style="width: 40px;">
+                {{member.name}}
+        </mat-checkbox>
+    </section>
+    <br>
+
+    <button mat-raised-button color="primary" class="submitButton" (click)="sendForm()">
+        Create
+    </button>
+</form>

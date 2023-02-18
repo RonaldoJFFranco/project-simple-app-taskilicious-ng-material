@@ -38,10 +38,8 @@ export class EditCategoryComponent implements OnInit {
 
   sendForm(){
     if (this.form.valid) {
-      console.log(this.form.value)
       this.categoriesService.editById(this.form.value).subscribe(
         (resp: any) => {
-          console.log(resp)
           this.route.navigate(['/']);
         }
       )
