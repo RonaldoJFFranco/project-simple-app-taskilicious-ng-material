@@ -1,0 +1,17 @@
+<h1>Welcome to Taskilicious</h1>
+
+<h2>Choose a category</h2>
+<mat-select [(ngModel)]="defaultValue" (selectionChange)="sortCategories($event)">
+    <mat-option value="A-Z" selected>  A-Z </mat-option>
+    <mat-option value="Z-A">  Z-A </mat-option>
+</mat-select>
+<mat-list>
+    <mat-list-item *ngFor="let category of categories" [routerLink]="['/categories', category.id]">{{category.name}} 
+    <button mat-button [routerLink]="['/categories/edit', category.id]">
+        <mat-icon >edit</mat-icon>
+    </button>
+</mat-list-item>
+</mat-list>
+<button mat-fab color="accent" aria-label="Add category" [routerLink]="['/categories/create']">
+    <mat-icon>add</mat-icon>
+</button>
